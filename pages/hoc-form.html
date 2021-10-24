@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <title>Form</title>
+    <link />
+    <style> 
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color:#7602fa;
+      }
+      header{
+        width: 800px;
+        margin: auto;
+      }
+      main{
+       width: 800px;
+        margin: auto;
+        text-align: center;
+      }
+      .nhap-lieu-don-gian {
+        padding: 20px;
+        border: 1px solid red;
+        background-color: #ffeab0;
+      }
+      h1{
+        text-align:center;
+        color: white;
+      }
+      table {
+        width: 100%;
+        border: 1px solid #ff4538;
+      }
+      table td {
+        border: 1px solid #ff4538;
+
+      }
+
+      table .label {
+        width: 30%;
+        text-align:right;
+      }
+      .submit{
+        padding: 10px;
+        background-color:green;
+        color: white;
+
+      }
+      .reset{
+        padding: 10px;
+        background-color:#ff432e;
+        color: white;
+
+      }
+
+
+    </style>
+</head>
+<body>
+  <header>
+  <h1>Nền tảng Kiến thức | https://nentang.vn</h1> 
+  </header>
+  <main> 
+    <section> 
+      <form name="form-nhap-lieu" action="#" method="post">
+        <div class="nhap-lieu-don-gian">
+          <h2>Các thành phần nhập liệu (control/fields) đơn giản (text, textarea, select)<h2>
+          <table border="1" cellspacing="0" cellpadding="10px">
+            <tr>
+              <td class="label">
+                 <label for="txtHoTen">Họ tên * </label>
+              </td>
+              <td>
+                <input type="text" name="txtHoTen" id="txtHoTen" size="40" required/>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">
+                 <label for="txtDiachi">Địa chỉ * </label>
+              </td>
+              <td>
+                <input type="text" name="txtDiaChi" id="txtDiaChi" size="40" required/>
+              </td>
+            </tr>
+<tr>
+              <td class="label">
+                <label for="slNgaySinh">Ngày/tháng/năm sinh * </label>
+              </td>
+              <td>
+                <label for="slNgaySinh">Ngày sinh</label>
+                <select name="slNgaySinh" id="slNgaySinh">
+                <script>
+                  var ngay;
+                  ngay='';
+                  for ( var i=1; i<31; i++ ) {
+                    ngay+='<option>Ngày ' + i + '</option>';
+                  }
+                  document.getElementById("slNgaySinh").innerHTML=ngay;
+                 </script>
+               </select>
+                <label for="slThangSinh">Tháng sinh</label>
+                <select name="slThangSinh" id="slThangSinh">
+                <script>
+                  var thang;
+                  thang='';
+                  for (i=1; i<13; i++ ) {
+                    thang+='<option>Tháng ' + i + '</option>';
+                  }
+                  document.getElementById("slThangSinh").innerHTML=thang;
+                 </script>
+                </select>
+                <label for="slNamSinh">Năm sinh</label>
+                <select name="slNamSinh" id="slNamSinh">
+                <script>
+                  var nam;
+                  nam='';
+                  for (i=2021; i>1950; i-- ) {
+                    nam+='<option>Năm ' + i + '</option>';
+                  }
+                  document.getElementById("slNamSinh").innerHTML=nam;
+                 </script>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">
+                Sở thích của bạn
+              </td>
+              <td>
+                <textarea id="areSoThich" rows="4" cols="50" > </textarea>
+              </td>
+
+            </tr>
+          </table>
+        </div>
+        <div class="nhap-lieu-for">
+          <h2>Nhap lieu for</h2>
+          <table>
+            
+          </table>
+        </div>
+        <div>
+          <input class="submit" type="submit" value="Gửi dữ liệu"/> <input class="reset" type="reset" value="Xóa trắng dữ liệu"/> 
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
