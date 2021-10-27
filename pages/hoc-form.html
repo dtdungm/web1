@@ -1,149 +1,348 @@
 <html>
-  <head>
-    <title>Form</title>
-    <link />
-    <style> 
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        background-color:#7602fa;
-      }
-      header{
-        width: 800px;
-        margin: auto;
-      }
-      main{
-       width: 800px;
-        margin: auto;
-        text-align: center;
-      }
-      .nhap-lieu-don-gian {
-        padding: 20px;
-        border: 1px solid red;
-        background-color: #ffeab0;
-      }
-      h1{
-        text-align:center;
-        color: white;
-      }
-      table {
-        width: 100%;
-        border: 1px solid #ff4538;
-      }
-      table td {
-        border: 1px solid #ff4538;
 
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Kiểm tra dữ liệu của Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      table .label {
-        width: 30%;
-        text-align:right;
-      }
-      .submit{
-        padding: 10px;
-        background-color:green;
-        color: white;
+    body {
+      background-color: #7602fa;
+    }
 
-      }
-      .reset{
-        padding: 10px;
-        background-color:#ff432e;
-        color: white;
+    header {
+      width: 800px;
+      margin: auto;
+    }
 
-      }
+    main {
+      width: 800px;
+      margin: auto;
+      text-align: center;
+    }
 
+    .nhap-lieu-don-gian {
+      padding: 20px;
+      border: 1px solid red;
+      background-color: #ffe9cc;
+    }
 
-    </style>
+    .nhap-lieu-khac {
+      padding: 20px;
+      border: 1px solid red;
+      background-color: #d9a277;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+      border: 1px solid #ff4538;
+      border-spacing: 0px;
+      border-collapse: collapse;
+    }
+
+    table td {
+      border: 1px solid #ff4538;
+      padding: 6px;
+    }
+
+    table .label {
+      width: 30%;
+      text-align: right;
+    }
+
+    .submit {
+      padding: 10px;
+      background-color: green;
+      color: white;
+    }
+
+    .reset {
+      padding: 10px;
+      background-color: #ff432e;
+      color: white;
+    }
+
+    #vungketqua {
+      border: 1px solid green;
+      text-align: left;
+      background-color: #ffd9f0;
+    }
+
+    .batbuocnhap {
+      color: red;
+    }
+  </style>
 </head>
+
 <body>
   <header>
-  <h1>Nền tảng Kiến thức | https://nentang.vn</h1> 
+    <h1>Nền tảng Kiến thức | https://nentang.vn</h1>
   </header>
-  <main> 
-    <section> 
-      <form name="form-nhap-lieu" action="#" method="post">
-        <div class="nhap-lieu-don-gian">
-          <h2>Các thành phần nhập liệu (control/fields) đơn giản (text, textarea, select)<h2>
-          <table border="1" cellspacing="0" cellpadding="10px">
-            <tr>
-              <td class="label">
-                 <label for="txtHoTen">Họ tên * </label>
-              </td>
-              <td>
-                <input type="text" name="txtHoTen" id="txtHoTen" size="40" required/>
-              </td>
-            </tr>
-            <tr>
-              <td class="label">
-                 <label for="txtDiachi">Địa chỉ * </label>
-              </td>
-              <td>
-                <input type="text" name="txtDiaChi" id="txtDiaChi" size="40" required/>
-              </td>
-            </tr>
-<tr>
-              <td class="label">
-                <label for="slNgaySinh">Ngày/tháng/năm sinh * </label>
-              </td>
-              <td>
-                <label for="slNgaySinh">Ngày sinh</label>
-                <select name="slNgaySinh" id="slNgaySinh">
+  <main>
+    <section>
+      <!--    <form name="form-nhap-lieu" id="form-nhap-lieu" method="post"> -->
+      <div class="nhap-lieu-don-gian">
+        <h2>Các thành phần nhập liệu (control/fields) đơn giản (text, textarea, select)</h2>
+        <table>
+          <tr>
+            <td class="label">
+              <label for="txtHoTen">Họ tên </label><span class="batbuocnhap">*</span>
+            </td>
+            <td>
+              <input type="text" name="txtHoTen" id="txtHoTen" size="50" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label">
+              <label for="txtDiachi">Địa chỉ </label><span class="batbuocnhap">*</span>
+            </td>
+            <td>
+              <input type="text" name="txtDiaChi" id="txtDiaChi" size="50" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label">
+              <label for="slNgaySinh">Ngày/tháng/năm sinh </label><span class="batbuocnhap">*</span>
+            </td>
+            <td>
+              <label for="slNgaySinh">Ngày sinh</label>
+              <select name="slNgaySinh" id="slNgaySinh">
                 <script>
                   var ngay;
-                  ngay='';
-                  for ( var i=1; i<31; i++ ) {
-                    ngay+='<option>Ngày ' + i + '</option>';
+                  ngay = '';
+                  for (var i = 1; i < 32; i++) {
+                    ngay += '<option ' + 'value=' + i + '>Ngày ' + i + '</option>';
                   }
-                  document.getElementById("slNgaySinh").innerHTML=ngay;
-                 </script>
-               </select>
-                <label for="slThangSinh">Tháng sinh</label>
-                <select name="slThangSinh" id="slThangSinh">
+                  document.getElementById("slNgaySinh").innerHTML = ngay;
+                </script>
+              </select>
+              <label for="slThangSinh">Tháng sinh</label>
+              <select name="slThangSinh" id="slThangSinh">
                 <script>
                   var thang;
-                  thang='';
-                  for (i=1; i<13; i++ ) {
-                    thang+='<option>Tháng ' + i + '</option>';
+                  thang = '';
+                  for (i = 1; i < 13; i++) {
+                    thang += '<option ' + 'value=' + i + '>Tháng ' + i + '</option>';
                   }
-                  document.getElementById("slThangSinh").innerHTML=thang;
-                 </script>
-                </select>
-                <label for="slNamSinh">Năm sinh</label>
-                <select name="slNamSinh" id="slNamSinh">
+                  document.getElementById("slThangSinh").innerHTML = thang;
+                </script>
+              </select>
+              <label for="slNamSinh">Năm sinh</label>
+              <select name="slNamSinh" id="slNamSinh">
                 <script>
                   var nam;
-                  nam='';
-                  for (i=2021; i>1950; i-- ) {
-                    nam+='<option>Năm ' + i + '</option>';
+                  nam = '';
+                  for (i = 2021; i > 1950; i--) {
+                    nam += '<option ' + 'value=' + i + '>Năm ' + i + '</option>';
                   }
-                  document.getElementById("slNamSinh").innerHTML=nam;
-                 </script>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td class="label">
-                Sở thích của bạn
-              </td>
-              <td>
-                <textarea id="areSoThich" rows="4" cols="50" > </textarea>
-              </td>
-
-            </tr>
-          </table>
-        </div>
-        <div class="nhap-lieu-for">
-          <h2>Nhap lieu for</h2>
-          <table>
-            
-          </table>
-        </div>
-        <div>
-          <input class="submit" type="submit" value="Gửi dữ liệu"/> <input class="reset" type="reset" value="Xóa trắng dữ liệu"/> 
-        </div>
-      </form>
+                  document.getElementById("slNamSinh").innerHTML = nam;
+                </script>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Sở thích của bạn</td>
+            <td>
+              <textarea id="areSoThich" rows="4" cols="50" value=""></textarea>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="nhap-lieu-khac">
+        <h2>Các thành phần nhập liệu (controls/fields) (radio/checkbox)</h2>
+        <table>
+          <tr>
+            <td class="label">
+              Giới tính <span class="batbuocnhap">*</span>
+            </td>
+            <td>
+              <input type="radio" name="rdGioiTinh" id="rdGioiTinh1" value="nam" required="required" /> <label
+                for="rdGioiTinh1">Nam</label> <br />
+              <input type="radio" name="rdGioiTinh" id="rdGioiTinh2" value="nu" /> <label for="rdGioiTinh2">Nữ</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">
+              Đăng ký môn học <span class="batbuocnhap">*</span>
+            </td>
+            <td>
+              <input type="checkbox" name="chkMonHoc" id="chkMonHoc1" value="khoa1" /> <label for="chkMonHoc1">Khóa
+                học Web căn bản HTML, CSS, JS</label> <br />
+              <input type="checkbox" name="chkMonHoc" id="chkMonHoc2" value="khoa2" /> <label for="chkMonHoc2">Khóa
+                học Web nâng cao MySQL, PHP</label> <br />
+              <input type="checkbox" name="chkMonHoc" id="chkMonHoc3" value="khoa3" /> <label for="chkMonHoc3">Khóa
+                học Tư duy giải thuật</label> <br />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <button class="submit" name="submit" id="submit" onclick="layThongTin()">Gửi dữ liệu</button>
+        <input class="reset" type="reset" id="reset" name="reset" value="Xóa trắng dữ liệu" onclick="xoaBieuMau()" />
+      </div>
+      <!--      </form> -->
+    </section>
+    <section>
+      <div id="vungketqua">
+      </div>
     </section>
   </main>
+  <script>
+    function layThongTin() {
+      // 1.1 Thu thập thông tin người dùng
+      var hoten = document.getElementById("txtHoTen").value;
+      var diachi = document.getElementById('txtDiaChi').value;
+      var ngaysinh = document.getElementById('slNgaySinh').value;
+      var thangsinh = document.getElementById('slThangSinh').value;
+      var namsinh = document.getElementById('slNamSinh').value;
+      var sothich = document.getElementById('areSoThich').value;
+      // 1.2 Thu thập thông tin radio
+      var gioitinh = '';
+      var listElementGioiTinh = document.getElementsByName('rdGioiTinh');
+      var tongsoPhantuRadio = listElementGioiTinh.length;
+
+      for (var i = 0; i < tongsoPhantuRadio; i++) {
+        var phanTuDangXet = listElementGioiTinh[i];
+        if (phanTuDangXet.checked) {
+          gioitinh = phanTuDangXet.value;
+        }
+      }
+
+      // 1.3 Thu thập thông tin checkbox
+      var luachonMonHoc = '';
+      var listElementLuaChonMonHoc = document.getElementsByName('chkMonHoc');
+      var tongSoPhanTuCheckBox = listElementLuaChonMonHoc.length;
+
+      for (var i = 0; i < tongSoPhanTuCheckBox; i++) {
+        var phanTuDangXet = listElementLuaChonMonHoc[i];
+        if (phanTuDangXet.checked) {
+          luachonMonHoc += phanTuDangXet.value + ',';
+
+        }
+      }
+
+      // 2. Kiểm tra ràng buộc dữ liệu
+      var error = '';
+
+      // Kiểm tra dữ liệu ô Họ tên
+      // rule 1: bắt buộc nhập
+      if (hoten == '') {
+        error += 'Họ tên không được rỗng. Vui lòng nhập họ tên đầy đủ. <br />';
+      }
+
+      // rule 2: min 3
+      else if (hoten.length < 3) {
+        error += 'Họ tên phải từ 3 ký tự trở lên. <br />';
+      }
+
+      // rule 3: max 50
+      else if (hoten.length > 50) {
+        error += 'Họ tên phải ít hơn 50 ký tự. <br />';
+      }
+
+      // Kiểm tra địa chỉ
+      // rule 1: bắt buộc nhập
+
+      if (diachi == '') {
+        error += 'Địa chỉ không được rỗng. Vui lòng nhập địa chỉ. <br />';
+      }
+
+      // rule 2: min 3
+
+      else if (diachi.length < 3) {
+        error += 'Địa chỉ phải từ 3 ký tự trở lên <br />';
+      }
+
+      // rule 3: max 200
+
+      else if (diachi.length > 200) {
+        error += 'Địa chỉ phải ít hơn 200 ký tự <br />';
+      }
+
+      // Kiểm tra ngày sinh
+
+      // rule 1: không chọn ngày 30/2
+      if ((ngaysinh == 30) && (thangsinh == 2)) {
+        error += 'Ngày sinh chưa đúng. <br />';
+      }
+      // rule 2: không chọn ngày 31/2
+      if ((ngaysinh == 31) && (thangsinh == 2)) {
+        error += 'Ngày sinh đúng. <br />';
+      }
+
+      // Kiểm tra sở thích
+
+      // rule 1: sở thích có nhập
+      if (sothich.length != '') {
+
+        // rule 2: min 3
+        if (sothich.length < 3) {
+          error += 'Sở thích phải từ 3 ký tự trở lên <br />';
+        }
+
+        // rule 3: max 500
+
+        if (sothich.length > 500) {
+          error += 'Sở thích phải ít hơn 500 ký tự <br />';
+        }
+      }
+
+      // Kiểm tra giới tính
+
+      if (gioitinh == '') {
+        error += 'Giới tính bắt buộc chọn Nam hoặc Nữ <br /> ';
+      }
+
+      // Kiểm tra lựa chọn môn học
+
+      if (luachonMonHoc == '') {
+        error += 'Bạn chưa chọn môn học <br />';
+      }
+
+      // 3. Quyết định hiển thị thông tin gì
+
+      if (error == '') {
+
+        // 3.0 Hiển thị thông tin
+        // 3.1 Chuẩn bị html
+
+        var htmlThongTin = '';
+
+        htmlThongTin += ' Cảm ơn bạn đã đăng ký học. Thông tin đăng ký của bạn là:'
+        htmlThongTin += '<ul>';
+        htmlThongTin += '<li>Họ tên: ' + hoten + '</li>';
+        htmlThongTin += ' <li>Địa chỉ: ' + diachi + '</li>';
+        htmlThongTin += '<li>Ngày tháng năm sinh: ' + ngaysinh + '/' + thangsinh + '/' + namsinh + '</li>';
+
+        if (sothich != '') {
+          htmlThongTin += '<li>Sở thích của bạn: ' + sothich + '</li>';
+        }
+
+        if (gioitinh == 'nam') {
+          htmlThongTin += ' <li>Giới tính: ' + 'Nam' + ' </li>';
+        } else if (gioitinh == 'nu') {
+          htmlThongTin += ' <li>Giới tính: ' + 'Nữ' + ' </li>';
+        }
+
+        htmlThongTin += '<li>Bạn đã đăng ký môn học: ' + luachonMonHoc + '  </li>';
+        htmlThongTin += '</ul>';
+
+        // 3.2 Tìm đối tượng element có  ID vungketqua, thay thế nội dung htmlThongTin
+        document.getElementById('vungketqua').innerHTML = htmlThongTin;
+      }
+      else {
+        //    3.3 Tìm đối tượng element có  ID vungketqua, thay thế nội dung error
+        document.getElementById('vungketqua').innerHTML = error;
+      }
+    }
+  </script>
 </body>
+
 </html>
