@@ -87,7 +87,7 @@
   </header>
   <main>
     <section>
-      <!--    <form name="form-nhap-lieu" id="form-nhap-lieu" method="post"> -->
+     <form name="form-nhap-lieu" id="form-nhap-lieu" method="post"> 
       <div class="nhap-lieu-don-gian">
         <h2>Các thành phần nhập liệu (control/fields) đơn giản (text, textarea, select)</h2>
         <table>
@@ -184,12 +184,9 @@
         </table>
       </div>
       <div>
-        <button class="submit" name="submit" id="submit" onclick="layThongTin()">Gửi dữ liệu</button>
-        <input class="reset" type="reset" id="reset" name="reset" value="Xóa trắng dữ liệu" onclick="xoaBieuMau()" />
-      </div>
-      <!--      </form> -->
-    </section>
-    <section>
+        <button class="submit" type="button" name="submit" id="submit" onclick="layThongTin()">Gửi dữ liệu</button>
+        <input class="reset" type="reset" id="reset" name="reset" value="Xóa trắng dữ liệu" />
+     </form> 
       <div id="vungketqua">
       </div>
     </section>
@@ -274,7 +271,7 @@
       }
       // rule 2: không chọn ngày 31/2
       if ((ngaysinh == 31) && (thangsinh == 2)) {
-        error += 'Ngày sinh đúng. <br />';
+        error += 'Ngày sinh chưa đúng. <br />';
       }
 
       // Kiểm tra sở thích
